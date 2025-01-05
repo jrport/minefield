@@ -28,15 +28,19 @@ func (u *UserManager) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	u.PrintStats()
+	fmt.Fprint(w, user.Id)
+	w.WriteHeader(201)
 }
 
 func main() {
 	muxer := http.NewServeMux()
-	userManager := NewUserManager(1024)
+	userRegister := NewUserRegister(1024)
+	userMatchMaker := NewUserMatchMaker(1024)
 
-	go MatchMakingService(userManager)
+	go MatchMakingService(userMatchMaker, userRegister)
 
-	muxer.Handle("POST /anom_session", userManager)
+	muxer.Handle("POST /anom_session", userRegister)
+	muxer.Handle("POST /match", userMatchMaker)
 
 	http.ListenAndServe(":8080", muxer)
 }

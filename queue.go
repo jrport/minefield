@@ -27,7 +27,7 @@ type UserManager struct {
 	Mu          sync.Mutex
 }
 
-func NewUserManager(queueSize int) *UserManager {
+func NewUserRegister(queueSize int) *UserManager {
 	return &UserManager{
 		Head:        nil,
 		Tail:        nil,
