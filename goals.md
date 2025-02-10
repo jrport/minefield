@@ -1,8 +1,21 @@
+# Relevant
+- Redo auth
+    - make it inside the ws
+- make some fucking cors that works
+- maybe design a basic frontend already
+
+# Sidequests
+- [ ] proper logging
+- [ ] deal with context smarter
+
 # GOALS
 - [x] Random ip makes request gets user_auth_id
-- [ ] faz requisicao no web socket mandando o user_auth_id
-    - [ ] caso negativo leva n na cara
+- [x] faz requisicao no web socket mandando o user_auth_id
+    - [x] caso negativo leva n na cara
     - [ ] eh botado na fila pro matchmaking rolar
+
+        - **LOOK TODO IN MATCHER**
+
 - [ ] match anom_id to another anom_id based on avaibality
 - each has its own websocket
 - [ ] WRAP THE FOLLOWING IN A TIMEOUT CONTEXT
