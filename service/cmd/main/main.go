@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	server := server.NewGameServer(":8080", 1024)
+	server := server.NewGameServer(":3000", 1024)
 
 	if err := server.Run(); err != nil {
 		fmt.Println(err.Error())

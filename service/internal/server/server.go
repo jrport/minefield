@@ -36,7 +36,7 @@ func SetupRoutes(muxer *http.ServeMux, gp *pool.MatchPool) {
 	matchMakerHandler := newMatchMakerHandler(gp, rc)
 
 	muxer.Handle("POST /anom_match", uidHandler)
-	muxer.Handle("GET /join_match", matchMakerHandler)
+	muxer.Handle("GET /api/join_match", matchMakerHandler)
 }
 
 func (gs *GameServer) Run() error {

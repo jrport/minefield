@@ -1,0 +1,10 @@
+:80 {
+    handle_path /api/* {
+	    reverse_proxy localhost:3000
+    }
+
+    handle {
+	root /home/linuxuser/repos/minefield/ui/build/
+	file_server
+    }
+}
