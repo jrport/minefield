@@ -1,0 +1,7 @@
+:80 {
+	file_server / {
+		root ./ui/
+		browse true
+	}
+	reverse_proxy /api/* localhost:3000
+}
